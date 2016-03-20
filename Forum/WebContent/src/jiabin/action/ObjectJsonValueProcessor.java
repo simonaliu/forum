@@ -8,24 +8,19 @@ import net.sf.json.JsonConfig;
 import net.sf.json.processors.JsonValueProcessor;
 
 /**
- * 解决对象级联问题
+ * 
  * @author Administrator
  *
  */
 public class ObjectJsonValueProcessor implements JsonValueProcessor{
 
-	/**
-	 * 保留的字段
-	 */
+	
 	private String[] properties;  
 	
-	/**
-	 * 处理类型
-	 */
+
 	private Class<?> clazz;  
 	
 	/**
-	 * 构造方法 
 	 * @param properties
 	 * @param clazz
 	 */

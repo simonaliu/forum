@@ -56,11 +56,11 @@ public class InitAction implements ServletContextListener,ApplicationContextAwar
 			for (Section section : zone.getSectionList()) {
 				Topic s_topic=new Topic(); 
 				s_topic.setSection(section);
-				Long tatolCount=topicService.getTopicCount(s_topic);			//板块的总帖数
+				Long tatolCount=topicService.getTopicCount(s_topic);			
 				s_topic.setGood(1);
-				Long goodCount=topicService.getTopicCount(s_topic);			//板块的精华帖数
+				Long goodCount=topicService.getTopicCount(s_topic);			
 				s_topic.setGood(0);
-				Long noReplyCount=topicService.getNoReplyTopicCount(s_topic);			//板块的无回复帖数
+				Long noReplyCount=topicService.getNoReplyTopicCount(s_topic);			
 				
 				sectionTopicCount.put(section, tatolCount);
 				sectionGoodTopicCount.put(section, goodCount);

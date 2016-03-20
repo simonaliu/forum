@@ -276,7 +276,7 @@ public class SectionAction extends ActionSupport implements ServletRequestAware{
 		total=sectionService.getSectionCount(s_section);
 		pageCode=PageUtil.genPagination(request.getContextPath()+"/admin/Section_list.action", total, Integer.parseInt(page), 6,null);
 		mainPage="section.jsp";
-		crumb1="小板块管理";
+		crumb1="小锟斤拷锟斤拷锟斤拷";
 		return SUCCESS;
 	}
 
@@ -323,12 +323,12 @@ public class SectionAction extends ActionSupport implements ServletRequestAware{
 		JSONObject result=new JSONObject();
 		user=userService.getUserByNickName(nickName);
 		if (user!=null) {
-			result.put("info", "用户id："+user.getId()+"用户昵称："+user.getNickName());
+			result.put("info", ""+user.getId()+""+user.getNickName());
 			result.put("masterId", user.getId());
-			//info="用户昵称："+user.getNickName();
+			//info=" "+user.getNickName();
 		}else {
-			result.put("info", "没有此用户！");
-			//info="没有此用户！";
+			result.put("info", "");
+			//info="";
 		}
 		ResponseUtil.write(ServletActionContext.getResponse(), result);
 		return SUCCESS;
