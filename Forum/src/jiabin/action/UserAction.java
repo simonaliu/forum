@@ -321,7 +321,7 @@ public class UserAction extends ActionSupport implements ServletRequestAware{
 		HttpServletResponse response=ServletActionContext.getResponse();
 		User currentUser=userService.login(user);
 		if(!imageCode.equals(session.getAttribute("sRand"))){
-			error="验证码错误！";
+			error="";
 			session.setAttribute("error", error);
 			/*if (user.getType()==3) {
 				return "adminError";
@@ -329,7 +329,7 @@ public class UserAction extends ActionSupport implements ServletRequestAware{
 				return ERROR;
 			}*/
 		}else if(currentUser==null){
-			error="用户名或密码错误！";
+			error="";
 			session.setAttribute("error", error);
 			/*if (user.getType()==3) {
 				return "adminError";
@@ -353,7 +353,7 @@ public class UserAction extends ActionSupport implements ServletRequestAware{
 		if (currentUser!=null&&currentUser.getType()==2) {
 			session.setAttribute("currentUser", currentUser);
 		}else {
-			error="用户名或密码错误！";
+			error="";
 			return "errorAdmin";
 		}
 		return "loginAdmin";
@@ -372,18 +372,18 @@ public class UserAction extends ActionSupport implements ServletRequestAware{
 	public String preSave()throws Exception{
 		HttpSession session=request.getSession();
 		user=(User) session.getAttribute("currentUser");
-		navCode=NavUtil.genNavCode("个人中心");
+		navCode=NavUtil.genNavCode("");
 		return "modify";
 	}
 	
 	public String userCenter()throws Exception{
-		navCode=NavUtil.genNavCode("个人中心");
+		navCode=NavUtil.genNavCode("");
 		//mainPage="userCenter/ucDefault.jsp";
 		return "userCenter";
 	}
 	
 	public String getUserInfo()throws Exception{
-		navCode=NavUtil.genNavCode("个人中心");
+		navCode=NavUtil.genNavCode("");
 		mainPage="userCenter/userInfo.jsp";
 		return "userCenter";
 	}
@@ -392,7 +392,7 @@ public class UserAction extends ActionSupport implements ServletRequestAware{
 		HttpSession session=request.getSession();
 		userService.saveUser(user);
 		//session.setAttribute("currentUser", user);
-		/*navCode=NavUtil.genNavCode("个人中心");
+		/*navCode=NavUtil.genNavCode("");
 		mainPage="userCenter/userInfo.jsp";*/
 		return SUCCESS;
 	}
@@ -418,7 +418,7 @@ public class UserAction extends ActionSupport implements ServletRequestAware{
 		long total=userService.getUserCount(s_user);
 		pageCode=PageUtil.genPagination(request.getContextPath()+"/admin/User_list.action", total, Integer.parseInt(page), 6,null);
 		mainPage="user.jsp";
-		crumb1="用户管理";
+		crumb1="";
 		return SUCCESS;
 	}
 	
@@ -428,7 +428,7 @@ public class UserAction extends ActionSupport implements ServletRequestAware{
 		for (int i = 0; i < idsStr.length; i++) {
 			User u=userService.getUserById(Integer.parseInt(idsStr[i]));
 			if (u.getSectionList().size()>0) {
-				result.put("info", u.getNickName()+"是版主，不能删除！");
+				result.put("info", u.getNickName()+"");
 				ResponseUtil.write(ServletActionContext.getResponse(), result);
 				return SUCCESS;
 			}
@@ -437,7 +437,7 @@ public class UserAction extends ActionSupport implements ServletRequestAware{
 			User u=userService.getUserById(Integer.parseInt(idsStr[i]));
 			userService.delete(u);
 		}
-		result.put("info", "删除成功！");
+		result.put("info", "");
 		ResponseUtil.write(ServletActionContext.getResponse(), result);
 		return SUCCESS;
 	}
@@ -446,12 +446,12 @@ public class UserAction extends ActionSupport implements ServletRequestAware{
 		JSONObject result=new JSONObject();
 		User e=userService.getUserById(userId);
 		if(e.getSectionList().size()>0){
-			result.put("info", "此用户是版主，不能删除！");
+			result.put("info", "");
 			ResponseUtil.write(ServletActionContext.getResponse(), result);
 			return SUCCESS;
 		}else {
 			userService.delete(e);
-			result.put("info", "删除成功！");
+			result.put("info", "");
 			ResponseUtil.write(ServletActionContext.getResponse(), result);
 			return SUCCESS;
 		}

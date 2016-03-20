@@ -8,7 +8,6 @@ import net.sf.json.JsonConfig;
 import net.sf.json.processors.JsonValueProcessor;
 
 /**
- * 
  * @author Administrator
  *
  */
@@ -17,7 +16,7 @@ public class ObjectJsonValueProcessor implements JsonValueProcessor{
 	
 	private String[] properties;  
 	
-
+	
 	private Class<?> clazz;  
 	
 	/**

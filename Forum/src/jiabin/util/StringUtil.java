@@ -4,14 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 字符串工具类
  * @author 
  *
  */
 public class StringUtil {
 
 	/**
-	 * 判断是否是空
 	 * @param str
 	 * @return
 	 */
@@ -24,7 +22,6 @@ public class StringUtil {
 	}
 	
 	/**
-	 * 判断是否不是空
 	 * @param str
 	 * @return
 	 */
@@ -36,7 +33,6 @@ public class StringUtil {
 		}
 	}
 	/**
-	 * 得到URL中字符串参数，只适合URL中有一个参数
 	 * @param url
 	 * @return
 	 */

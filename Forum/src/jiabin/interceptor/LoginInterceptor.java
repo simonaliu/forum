@@ -39,7 +39,7 @@ public class LoginInterceptor extends MethodFilterInterceptor {
 	}
 	
 	private void setGoingURL(HttpServletRequest request,HttpSession session,ActionInvocation invocation){
-		//如果refer不为空，直接使用它。如果为空我们分别获得命名空间，action名，以及请求参数，重新构造成一个URL保存在SESSION中
+		
 		String url=request.getHeader("referer");
 		String url2;
 		if (url==null||url.equals("")) {

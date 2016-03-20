@@ -325,7 +325,7 @@ public class SectionAction extends ActionSupport implements ServletRequestAware{
 		if (user!=null) {
 			result.put("info", ""+user.getId()+""+user.getNickName());
 			result.put("masterId", user.getId());
-			//info=" "+user.getNickName();
+			//info=""+user.getNickName();
 		}else {
 			result.put("info", "");
 			//info="";

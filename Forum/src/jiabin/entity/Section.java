@@ -20,13 +20,13 @@ import org.hibernate.annotations.GenericGenerator;
 @Table(name="t_section")
 public class Section {
 
-	private int id;				//°å¿éid
-	private String name;		//°å¿éÃû³Æ
-	private User master;		//°æÖ÷id
-	private String logo;		//°å¿élogoÍ¼Æ¬Â·¾¶
+	private int id;				
+	private String name;		
+	private User master;		
+	private String logo;		
 	private List<Topic> topicList=new ArrayList<Topic>();
-	private Zone zone;			//ËùÊô´ó°å¿é
-	/*private Section parent;*/		//¸¸°å¿é
+	private Zone zone;			
+	/*private Section parent;*/		
 	/*private List<Section> sectionList=new ArrayList<Section>();*/
 	
 	@Id

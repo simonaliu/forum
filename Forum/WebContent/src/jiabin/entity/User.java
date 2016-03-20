@@ -21,16 +21,16 @@ import org.hibernate.annotations.GenericGenerator;
 @Table(name="t_user")
 public class User {
 
-	private int id;        		//用户id
-	private String nickName;	//用户昵称
-	private String trueName;	//用户真实姓名
-	private String password;	//登录密码
-	private String sex;			//用户性别	0男		1女
-	private String face;		//头像路径
-	private Date regTime;		//注册时间
-	private String email;		//用户邮箱
-	private String mobile;		//联系电话
-	private int type;			//用户类型	1为其他用户；2管理员
+	private int id;        		
+	private String nickName;	
+	private String trueName;	
+	private String password;	
+	private String sex;			
+	private String face;		
+	private Date regTime;		
+	private String email;		
+	private String mobile;		
+	private int type;			
 	private List<Section> sectionList=new ArrayList<Section>();
 	private List<Topic> topicList=new ArrayList<Topic>();
 	private List<Reply> replyList=new ArrayList<Reply>();

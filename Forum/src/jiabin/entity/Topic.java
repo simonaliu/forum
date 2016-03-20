@@ -23,15 +23,15 @@ import org.hibernate.annotations.GenericGenerator;
 @Table(name="t_topic")
 public class Topic {
 
-	private int id;						//帖子id
-	private Section section;			//所属板块
-	private User user;					//发帖人
-	private String title;				//贴子标题
-	private String content;				//帖子内容
-	private Date publishTime;			//发帖时间
-	private Date modifyTime;			//修改时间
-	private int good=0;					//是否精华	0为普通；1为精华
-	private int top=0;					//是否置顶	0为普通；1为置顶
+	private int id;						
+	private Section section;			
+	private User user;					
+	private String title;				
+	private String content;				
+	private Date publishTime;			
+	private Date modifyTime;			
+	private int good=0;					
+	private int top=0;					
 	private List<Reply> replyList=new ArrayList<Reply>();
 	
 	@Id

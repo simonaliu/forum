@@ -18,11 +18,11 @@ import org.hibernate.annotations.GenericGenerator;
 @Table(name="t_zone")
 public class Zone {
 
-	private int id;				//´ó°å¿éid
-	private String name;		//´ó°å¿éÃû³Æ
-	private String description;	//ÂÛÌ³½éÉÜ
+	private int id;				
+	private String name;		
+	private String description;	
 	
-	private List<Section> sectionList=new ArrayList<Section>();		//ÏÂÊô°å¿é
+	private List<Section> sectionList=new ArrayList<Section>();		
 
 	@Id
 	@GeneratedValue(generator="_native")

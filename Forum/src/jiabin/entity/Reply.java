@@ -17,13 +17,13 @@ import org.hibernate.annotations.GenericGenerator;
 @Table(name="t_reply")
 public class Reply {
 
-	private int id;				//回复编号
-	private Topic topic;		//所属主贴
-	private User user;			//回复人
-	private String title;		//跟帖主题
-	private String content;	//跟帖内容
-	private Date publishTime;	//跟帖时间
-	private Date modifyTime;	//修改时间
+	private int id;				
+	private Topic topic;		
+	private User user;			
+	private String title;		
+	private String content;	
+	private Date publishTime;	
+	private Date modifyTime;	
 	
 	@Id
 	@GeneratedValue(generator="_native")

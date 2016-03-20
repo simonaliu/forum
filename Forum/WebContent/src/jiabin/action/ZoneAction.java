@@ -191,7 +191,7 @@ public class ZoneAction extends ActionSupport implements ServletRequestAware{
 		total=zoneService.getZoneCount(s_zone);
 		pageCode=PageUtil.genPagination(request.getContextPath()+"/admin/Zone_list.action", total, Integer.parseInt(page), 6,null);
 		mainPage="zone.jsp";
-		crumb1="´ó°å¿é¹ÜÀí";
+		crumb1="";
 		return SUCCESS;
 	}
 
